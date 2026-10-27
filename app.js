@@ -3,13 +3,25 @@
 // Handles Interactive Filtering, Screenshot Lightbox, and Mobile Navigation
 // ==============================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+function startApp() {
   initNavigation();
-  renderProjects('all');
+  if (typeof PBS_PROJECTS !== 'undefined') {
+    renderProjects('all');
+  } else {
+    setTimeout(() => {
+      if (typeof PBS_PROJECTS !== 'undefined') renderProjects('all');
+    }, 50);
+  }
   initFilterTabs();
   initModal();
   initContactForm();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startApp);
+} else {
+  startApp();
+}
 
 // Mobile Drawer & Smooth Navigation
 function initNavigation() {
@@ -56,7 +68,7 @@ function renderProjects(filter) {
           <span class="badge ${p.badgeClass}">${p.statusBadge}</span>
           ${screenshotCount > 0 ? `<span class="badge" style="background: rgba(16, 36, 69, 0.75); color: #fff;">${screenshotCount} Views</span>` : ''}
         </div>
-        <img src="${p.primaryImage}" alt="${p.name} Desktop Screenshot" loading="lazy">
+        <img src="${p.primaryImage}" alt="${p.name} Desktop Screenshot" loading="eager">
         <div class="media-expand-hint">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 15 6 6m-6-6v4.8m0-4.8h4.8M9 9 3 3m6 6V4.2M9 9H4.2"/></svg>
           Inspect Visual Evidence

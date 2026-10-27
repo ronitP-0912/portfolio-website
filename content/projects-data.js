@@ -1,6 +1,7 @@
 // ==============================================================================
 // PAUL BUSINESS SOLUTIONS (PBS) — MASTER SHOWCASE DATASET
 // Factual, Verified Information Grounded in Project Records & Screenshot Registers
+// Self-Contained Relative Asset Paths for GitHub Pages & Custom Domain Deployment
 // ==============================================================================
 
 const PBS_PROJECTS = [
@@ -22,26 +23,26 @@ const PBS_PROJECTS = [
       "Zero-install customer mobile QR ordering web app with live cart and dietary filters"
     ],
     techStack: ["Next.js 16", "React 19", "Python (FastAPI)", "SQLAlchemy 2.0", "PostgreSQL 16", "WebSockets", "Tailwind CSS"],
-    primaryImage: "public-assets/projects/restaurant-os/01-restaurant-dashboard-desktop.png",
+    primaryImage: "assets/screenshots/restaurant-os/01-restaurant-dashboard-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/restaurant-os/01-restaurant-dashboard-desktop.png",
+        url: "assets/screenshots/restaurant-os/01-restaurant-dashboard-desktop.png",
         caption: "Administrative Dashboard: Onboarding checklist, branch indicators, and kitchen fulfillment configuration."
       },
       {
-        url: "public-assets/projects/restaurant-os/02-pos-order-taking-desktop.png",
+        url: "assets/screenshots/restaurant-os/02-pos-order-taking-desktop.png",
         caption: "Cashier POS Station: Multi-category order entry, table dispatch, and live cart calculation."
       },
       {
-        url: "public-assets/projects/restaurant-os/03-menu-management-desktop.png",
+        url: "assets/screenshots/restaurant-os/03-menu-management-desktop.png",
         caption: "Menu Catalogue Management: Multi-category menu dishes, INR pricing, and dietary classification."
       },
       {
-        url: "public-assets/projects/restaurant-os/04-orders-and-billing-desktop.png",
+        url: "assets/screenshots/restaurant-os/04-orders-and-billing-desktop.png",
         caption: "Active Orders & Tax Billing: Order status pipeline alongside 80mm thermal receipt and GST modal."
       },
       {
-        url: "public-assets/projects/restaurant-os/05-restaurant-operations-mobile.png",
+        url: "assets/screenshots/restaurant-os/05-restaurant-operations-mobile.png",
         caption: "Mobile Customer QR Menu: Responsive table-side ordering web app (/order/demo-cafe/table-1)."
       }
     ],
@@ -66,35 +67,59 @@ const PBS_PROJECTS = [
       "Expense disbursement ledger tracking 12 operational corporate categories and vouchers"
     ],
     techStack: ["React", "TypeScript", "Python (FastAPI)", "SQLAlchemy", "PostgreSQL", "Tailwind CSS", "Vite"],
-    primaryImage: "public-assets/projects/pbs-account-system/01-dashboard-financial-summary-desktop.png",
+    primaryImage: "assets/screenshots/pbs-account-system/01-dashboard-financial-summary-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/pbs-account-system/01-dashboard-financial-summary-desktop.png",
+        url: "assets/screenshots/pbs-account-system/01-dashboard-financial-summary-desktop.png",
         caption: "Executive Financial Dashboard: Cash in/out indicators, gross revenue, and operational movement."
       },
       {
-        url: "public-assets/projects/pbs-account-system/02-client-directory-desktop.png",
+        url: "assets/screenshots/pbs-account-system/02-client-directory-desktop.png",
         caption: "Enterprise Client CRM: Corporate client profiles, billing contacts, and payment status tracking."
       },
       {
-        url: "public-assets/projects/pbs-account-system/03-invoice-register-desktop.png",
+        url: "assets/screenshots/pbs-account-system/03-invoice-register-desktop.png",
         caption: "Invoice Lifecycle Register: Status-coded tax invoice tracking (Paid, Partial, Overdue, Draft)."
       },
       {
-        url: "public-assets/projects/pbs-account-system/04-invoice-detail-desktop.png",
+        url: "assets/screenshots/pbs-account-system/04-invoice-detail-desktop.png",
         caption: "Tax Invoice Modal: Itemized deliverables, CGST/SGST calculation, and PDF invoice generation."
       },
       {
-        url: "public-assets/projects/pbs-account-system/05-receipt-payment-register-desktop.png",
+        url: "assets/screenshots/pbs-account-system/05-receipt-payment-register-desktop.png",
         caption: "Receipt Ledger: Reconciled transaction audit trail with payment methods and reference IDs."
       },
       {
-        url: "public-assets/projects/pbs-account-system/06-expense-register-desktop.png",
+        url: "assets/screenshots/pbs-account-system/06-expense-register-desktop.png",
         caption: "Expense Register: Operational voucher disbursements and categorized expense audit log."
       },
       {
-        url: "public-assets/projects/pbs-account-system/01-dashboard-mobile.png",
+        url: "assets/screenshots/pbs-account-system/07-expense-category-summary-desktop.png",
+        caption: "Category Breakdown: Real-time spend allocation across operational budget heads."
+      },
+      {
+        url: "assets/screenshots/pbs-account-system/08-financial-reports-desktop.png",
+        caption: "Financial Statements: Comprehensive P&L statement, balance sheet, and collections analysis."
+      },
+      {
+        url: "assets/screenshots/pbs-account-system/09-subscription-plan-overview-desktop.png",
+        caption: "Commercial Plans: Multi-tier subscription package structure and feature entitlements."
+      },
+      {
+        url: "assets/screenshots/pbs-account-system/10-company-settings-desktop.png",
+        caption: "Entity Configuration: GSTIN registration, billing identity, and system preferences."
+      },
+      {
+        url: "assets/screenshots/pbs-account-system/01-dashboard-mobile.png",
         caption: "Mobile Dashboard: Responsive financial summary and quick-action billing overview."
+      },
+      {
+        url: "assets/screenshots/pbs-account-system/02-invoice-register-mobile.png",
+        caption: "Mobile Invoices: On-the-go invoice status verification and outstanding balance tracking."
+      },
+      {
+        url: "assets/screenshots/pbs-account-system/03-expense-register-mobile.png",
+        caption: "Mobile Expenses: Quick field expense submission and voucher status check."
       }
     ],
     liveUrl: null,
@@ -118,26 +143,26 @@ const PBS_PROJECTS = [
       "Thermal receipt preview generator for retail checkout handoffs"
     ],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel Cloud", "Conversational AI Logic"],
-    primaryImage: "public-assets/projects/grocery-os/01-store-dashboard-desktop.png",
+    primaryImage: "assets/screenshots/grocery-os/01-store-dashboard-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/grocery-os/01-store-dashboard-desktop.png",
+        url: "assets/screenshots/grocery-os/01-store-dashboard-desktop.png",
         caption: "Retail Store Dashboard: Daily sales indicators, order fulfillment volume, and product category trends."
       },
       {
-        url: "public-assets/projects/grocery-os/02-whatsapp-order-simulator-desktop.png",
+        url: "assets/screenshots/grocery-os/02-whatsapp-order-simulator-desktop.png",
         caption: "WhatsApp Order Simulator: Conversational customer chat with real-time parsed order acceptance."
       },
       {
-        url: "public-assets/projects/grocery-os/03-order-management-pipeline-desktop.png",
+        url: "assets/screenshots/grocery-os/03-order-management-pipeline-desktop.png",
         caption: "Order Management Pipeline: Multi-stage status pipeline and customer receipt modal."
       },
       {
-        url: "public-assets/projects/grocery-os/04-product-inventory-desktop.png",
+        url: "assets/screenshots/grocery-os/04-product-inventory-desktop.png",
         caption: "Product Inventory: FMCG catalogue, pricing, gross margin metrics, and stock alerts."
       },
       {
-        url: "public-assets/projects/grocery-os/05-store-operations-mobile.png",
+        url: "assets/screenshots/grocery-os/05-store-operations-mobile.png",
         caption: "Mobile Operations: Responsive retail management and quick order status updating."
       }
     ],
@@ -162,27 +187,35 @@ const PBS_PROJECTS = [
       "Integrated inquiry routing for prospective commercial client engagements"
     ],
     techStack: ["Next.js", "React", "Vanilla CSS", "Modern Web APIs", "Vercel"],
-    primaryImage: "public-assets/projects/superknown/01-homepage-desktop.png",
+    primaryImage: "assets/screenshots/superknown/01-homepage-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/superknown/01-homepage-desktop.png",
+        url: "assets/screenshots/superknown/01-homepage-desktop.png",
         caption: "Hero Section: 'Creativity That Moves Brands Forward' interactive slider and agency identity."
       },
       {
-        url: "public-assets/projects/superknown/02-main-content-desktop.png",
+        url: "assets/screenshots/superknown/02-main-content-desktop.png",
         caption: "Solutions Catalogue: End-to-end creative, technology, and execution capabilities."
       },
       {
-        url: "public-assets/projects/superknown/03-feature-desktop.png",
+        url: "assets/screenshots/superknown/03-feature-desktop.png",
         caption: "Core Values: 'Why We Exist' distinctive philosophy and creative standards grid."
       },
       {
-        url: "public-assets/projects/superknown/04-footer-desktop.png",
+        url: "assets/screenshots/superknown/04-footer-desktop.png",
         caption: "Agency Footer: Direct inquiry channels, agency location, and social links."
       },
       {
-        url: "public-assets/projects/superknown/01-homepage-mobile.png",
+        url: "assets/screenshots/superknown/01-homepage-mobile.png",
         caption: "Mobile View: Responsive hero section and mobile navigation layout."
+      },
+      {
+        url: "assets/screenshots/superknown/02-main-content-mobile.png",
+        caption: "Mobile Solutions: Touch-optimized service showcase and detailed agency deliverables."
+      },
+      {
+        url: "assets/screenshots/superknown/03-feature-mobile.png",
+        caption: "Mobile Philosophy: Core values presentation optimized for smartphone reading."
       }
     ],
     liveUrl: "https://www.superknown.in",
@@ -206,27 +239,35 @@ const PBS_PROJECTS = [
       "Optimized mobile browsing for on-the-go reservation lookups and directions"
     ],
     techStack: ["HTML5", "CSS3 Design Tokens", "JavaScript", "Responsive Web Framework"],
-    primaryImage: "public-assets/projects/germinnaa/01-homepage-desktop.png",
+    primaryImage: "assets/screenshots/germinnaa/01-homepage-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/germinnaa/01-homepage-desktop.png",
+        url: "assets/screenshots/germinnaa/01-homepage-desktop.png",
         caption: "Hero Presentation: 'Culinary Elegance in the Heart of Kolkata' brand statement."
       },
       {
-        url: "public-assets/projects/germinnaa/02-main-content-desktop.png",
+        url: "assets/screenshots/germinnaa/02-main-content-desktop.png",
         caption: "Our Story: Founders' background and culinary vision for Kolkata's dining landscape."
       },
       {
-        url: "public-assets/projects/germinnaa/03-feature-desktop.png",
+        url: "assets/screenshots/germinnaa/03-feature-desktop.png",
         caption: "Food Philosophy: Selected signature dishes, flavor profiles, and seasonal preparations."
       },
       {
-        url: "public-assets/projects/germinnaa/04-footer-desktop.png",
+        url: "assets/screenshots/germinnaa/04-footer-desktop.png",
         caption: "Visiting Information: Lake Road location details, opening hours, and direct reservations."
       },
       {
-        url: "public-assets/projects/germinnaa/01-homepage-mobile.png",
+        url: "assets/screenshots/germinnaa/01-homepage-mobile.png",
         caption: "Mobile Responsive View: Clean hero layout tailored for smartphone diners."
+      },
+      {
+        url: "assets/screenshots/germinnaa/02-main-content-mobile.png",
+        caption: "Mobile Story: Dedicated founding narrative formatted for mobile touch navigation."
+      },
+      {
+        url: "assets/screenshots/germinnaa/03-feature-mobile.png",
+        caption: "Mobile Menu: Dish philosophy and signature gastronomy preview on phones."
       }
     ],
     liveUrl: "https://germinnaa.com/",
@@ -250,27 +291,35 @@ const PBS_PROJECTS = [
       "Hospitality contact layout with visiting hours, seating policies, and private event inquiries"
     ],
     techStack: ["Next.js", "React", "Tailwind CSS", "Vercel Cloud", "Micro-Interactions"],
-    primaryImage: "public-assets/projects/criollo-cafe/01-homepage-desktop.png",
+    primaryImage: "assets/screenshots/criollo-cafe/01-homepage-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/criollo-cafe/01-homepage-desktop.png",
+        url: "assets/screenshots/criollo-cafe/01-homepage-desktop.png",
         caption: "Hero Section: 'Artisanal Bakery • Master Chocolaterie' brand introduction."
       },
       {
-        url: "public-assets/projects/criollo-cafe/02-main-content-desktop.png",
+        url: "assets/screenshots/criollo-cafe/02-main-content-desktop.png",
         caption: "Our Essence: Three Culinary Pillars and single-origin cacao philosophy."
       },
       {
-        url: "public-assets/projects/criollo-cafe/03-feature-desktop.png",
+        url: "assets/screenshots/criollo-cafe/03-feature-desktop.png",
         caption: "Craft Atelier: Interactive presentation of artisanal chocolate craftsmanship."
       },
       {
-        url: "public-assets/projects/criollo-cafe/04-footer-desktop.png",
+        url: "assets/screenshots/criollo-cafe/04-footer-desktop.png",
         caption: "Contact & Hours: Bakery operational timings, directions, and private reservations."
       },
       {
-        url: "public-assets/projects/criollo-cafe/01-homepage-mobile.png",
+        url: "assets/screenshots/criollo-cafe/01-homepage-mobile.png",
         caption: "Mobile Responsive Experience: Seamless touch-friendly brand presentation."
+      },
+      {
+        url: "assets/screenshots/criollo-cafe/02-main-content-mobile.png",
+        caption: "Mobile Culinary Essence: Three pillars philosophy presented for handheld browsing."
+      },
+      {
+        url: "assets/screenshots/criollo-cafe/03-feature-mobile.png",
+        caption: "Mobile Craft Atelier: Roasting and tempering process breakdown on mobile."
       }
     ],
     liveUrl: "https://criollo-website-demo.vercel.app",
@@ -294,27 +343,35 @@ const PBS_PROJECTS = [
       "Dedicated 24/7 admissions helpline and quick consultation inquiry form"
     ],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
-    primaryImage: "public-assets/projects/ascend-demo-website/01-homepage-desktop.png",
+    primaryImage: "assets/screenshots/ascend-demo-website/01-homepage-desktop.png",
     screenshots: [
       {
-        url: "public-assets/projects/ascend-demo-website/01-homepage-desktop.png",
+        url: "assets/screenshots/ascend-demo-website/01-homepage-desktop.png",
         caption: "Hero Section: 'A place to heal. A space to rebuild.' patient-centric care mission."
       },
       {
-        url: "public-assets/projects/ascend-demo-website/02-main-content-desktop.png",
+        url: "assets/screenshots/ascend-demo-website/02-main-content-desktop.png",
         caption: "Our Programmes: Structured clinical pathways from detox to long-term reintegration."
       },
       {
-        url: "public-assets/projects/ascend-demo-website/03-feature-desktop.png",
+        url: "assets/screenshots/ascend-demo-website/03-feature-desktop.png",
         caption: "The Centre: Architectural facility gallery showcasing modern recovery environments."
       },
       {
-        url: "public-assets/projects/ascend-demo-website/04-footer-desktop.png",
+        url: "assets/screenshots/ascend-demo-website/04-footer-desktop.png",
         caption: "Admissions & Helpline: Confidential 24/7 intake contact and visiting protocols."
       },
       {
-        url: "public-assets/projects/ascend-demo-website/01-homepage-mobile.png",
+        url: "assets/screenshots/ascend-demo-website/01-homepage-mobile.png",
         caption: "Mobile View: Responsive care overview designed for family assistance on smartphones."
+      },
+      {
+        url: "assets/screenshots/ascend-demo-website/02-main-content-mobile.png",
+        caption: "Mobile Programmes: Clinical care levels structured for easy scrolling on mobile devices."
+      },
+      {
+        url: "assets/screenshots/ascend-demo-website/03-feature-mobile.png",
+        caption: "Mobile Accommodations: Facility environments and therapeutic suite previews on phones."
       }
     ],
     liveUrl: "https://ascend-website-demo.vercel.app",
