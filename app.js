@@ -14,7 +14,6 @@ function startApp() {
   }
   initFilterTabs();
   initModal();
-  initContactForm();
 }
 
 if (document.readyState === 'loading') {
@@ -58,9 +57,10 @@ function renderProjects(filter) {
     ? PBS_PROJECTS
     : PBS_PROJECTS.filter(p => p.categoryKey === filter || (filter === 'systems' && p.categoryKey === 'automation'));
 
-  grid.innerHTML = filtered.map(p => {
+  grid.innerHTML = filtered.map((p, idx) => {
     const hasMedia = p.primaryImage !== null;
     const screenshotCount = p.screenshots ? p.screenshots.length : 0;
+    const isPriority = idx < 2;
 
     const mediaHtml = hasMedia ? `
       <div class="project-card-media" onclick="openProjectModal('${p.id}')">
@@ -68,7 +68,7 @@ function renderProjects(filter) {
           <span class="badge ${p.badgeClass}">${p.statusBadge}</span>
           ${screenshotCount > 0 ? `<span class="badge" style="background: rgba(16, 36, 69, 0.75); color: #fff;">${screenshotCount} Views</span>` : ''}
         </div>
-        <img src="${p.primaryImage}" alt="${p.name} Desktop Screenshot" loading="eager">
+        <img src="${p.primaryImage}" alt="${p.name} Desktop Screenshot" loading="${isPriority ? 'eager' : 'lazy'}" ${idx === 0 ? 'fetchpriority="high"' : ''}>
         <div class="media-expand-hint">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 15 6 6m-6-6v4.8m0-4.8h4.8M9 9 3 3m6 6V4.2M9 9H4.2"/></svg>
           Inspect Visual Evidence
@@ -219,14 +219,24 @@ function updateModalView() {
 
   const currentShot = currentProject.screenshots[currentScreenshotIndex];
   frame.innerHTML = `
-    <img src="${currentShot.url}" alt="${currentProject.name} Screenshot ${currentScreenshotIndex + 1}" style="max-height: 56vh; width: 100%; object-fit: contain;">
+    <img src="${currentShot.url}" alt="${currentProject.name} Screenshot ${currentScreenshotIndex + 1}" style="max-height: 56vh; width: 100%; object-fit: contain;" loading="eager">
   `;
-  captionEl.innerHTML = `<strong>View ${currentScreenshotIndex + 1} of ${currentProject.screenshots.length}:</strong> ${currentShot.caption}`;
+  captionEl.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; flex-wrap: wrap; width: 100%;">
+      <div><strong>View ${currentScreenshotIndex + 1} of ${currentProject.screenshots.length}:</strong> ${currentShot.caption}</div>
+      ${currentShot.fullUrl ? `
+        <a href="${currentShot.fullUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-light" style="font-size: 0.75rem; padding: 0.35rem 0.8rem; border-radius: 9999px; text-decoration: none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+          Open 2880×2000 Original ↗
+        </a>
+      ` : ''}
+    </div>
+  `;
 
-  // Thumbnails
+  // Thumbnails using optimized WebP derivatives
   galleryEl.innerHTML = currentProject.screenshots.map((s, idx) => `
-    <div class="gallery-thumb ${idx === currentScreenshotIndex ? 'active' : ''}" onclick="selectScreenshot(${idx})">
-      <img src="${s.url}" alt="Thumbnail ${idx + 1}">
+    <div class="gallery-thumb ${idx === currentScreenshotIndex ? 'active' : ''}" onclick="selectScreenshot(${idx})" title="View screenshot ${idx + 1}">
+      <img src="${s.thumbUrl || s.url}" alt="Thumbnail ${idx + 1}" loading="lazy">
     </div>
   `).join('');
 
@@ -258,34 +268,4 @@ function prevScreenshot() {
   updateModalView();
 }
 
-// Contact Form Handling with Feedback
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const alertBox = document.getElementById('formAlert');
 
-  if (form && alertBox) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('formName').value.trim();
-      const company = document.getElementById('formCompany').value.trim();
-      const service = document.getElementById('formService').value;
-      const message = document.getElementById('formMessage').value.trim();
-
-      if (!name || !message) {
-        alertBox.innerHTML = `
-          <div style="background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.3); color: #dc2626; padding: 0.8rem; border-radius: 8px; font-size: 0.82rem; margin-top: 1rem;">
-            Please provide your name and project details so we can understand your business needs.
-          </div>
-        `;
-        return;
-      }
-
-      alertBox.innerHTML = `
-        <div style="background: rgba(5, 150, 105, 0.12); border: 1px solid rgba(5, 150, 105, 0.3); color: #047857; padding: 1rem; border-radius: 8px; font-size: 0.85rem; margin-top: 1rem;">
-          <strong>Inquiry Drafted Successfully:</strong> Thank you, <strong>${name}</strong> (${company || 'Enterprise Partner'}). Your consultation request regarding <em>${service}</em> has been drafted. Once official PBS communications channels are verified, inquiries will route directly to the project desk.
-        </div>
-      `;
-      form.reset();
-    });
-  }
-}

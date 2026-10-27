@@ -61,10 +61,13 @@ html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 a {
@@ -210,56 +213,66 @@ button {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: var(--transition);
+  height: 64px;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 64px;
+  gap: 1rem;
 }
 
 .brand-identity {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .brand-logo-img {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   object-fit: contain;
   background: #ffffff;
   padding: 2px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
 }
 
 .brand-text-block {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .brand-name {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--pbs-pure-white);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
   line-height: 1.15;
 }
 
-.brand-sub {
+.brand-tagline {
   font-size: 0.68rem;
   font-weight: 500;
   color: var(--pbs-bright-turquoise);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.5rem;
 }
 
 .nav-link {
@@ -269,6 +282,7 @@ button {
   transition: var(--transition);
   position: relative;
   padding: 0.3rem 0;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link:focus-visible {
@@ -293,7 +307,31 @@ button {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.btn-pdf-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pbs-pure-white);
+  background: rgba(0, 151, 178, 0.18);
+  border: 1px solid rgba(60, 205, 230, 0.45);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-pdf-header:hover {
+  background: rgba(0, 151, 178, 0.35);
+  border-color: var(--pbs-bright-turquoise);
+  color: var(--pbs-bright-turquoise);
+  box-shadow: 0 0 12px rgba(60, 205, 230, 0.25);
 }
 
 .mobile-menu-btn {
@@ -301,12 +339,15 @@ button {
   color: var(--pbs-pure-white);
   padding: 0.5rem;
   border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* Mobile Drawer */
 .mobile-drawer {
   position: fixed;
-  top: 76px;
+  top: 64px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -1005,111 +1046,89 @@ button {
 }
 
 /* ==============================================================================
-   CONTACT SECTION
+   CALL TO ACTION (CTA) SECTION
    ============================================================================== */
-.contact-section {
+.cta-section {
   padding: 5.5rem 0;
-  background: var(--pbs-pure-white);
+  background: linear-gradient(180deg, var(--pbs-ice-grey-light) 0%, #e1ebf4 100%);
+  border-top: 1px solid var(--pbs-border-color);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
+.cta-card {
+  background: linear-gradient(135deg, var(--pbs-midnight-navy) 0%, var(--pbs-deep-navy) 60%, #061122 100%);
+  color: var(--pbs-pure-white);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(60, 205, 230, 0.25);
 }
 
-.contact-info-block {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 151, 178, 0.25) 0%, rgba(60, 205, 230, 0.05) 50%, transparent 70%);
+  pointer-events: none;
 }
 
-.contact-channel-card {
-  background: var(--pbs-ice-grey-light);
-  border: 1px solid var(--pbs-border-color);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  display: flex;
+.cta-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.5rem;
+  background: rgba(60, 205, 230, 0.15);
+  color: var(--pbs-bright-turquoise);
+  border: 1px solid rgba(60, 205, 230, 0.35);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
 }
 
-.channel-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: rgba(0, 151, 178, 0.1);
-  color: var(--pbs-deep-teal);
+.cta-title {
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--pbs-pure-white);
+  line-height: 1.2;
+  margin-bottom: 1.1rem;
+}
+
+.cta-desc {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  max-width: 640px;
+  margin: 0 auto 2.2rem;
+  line-height: 1.6;
+}
+
+.cta-btn-group {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
-.channel-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--pbs-slate-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.cta-main-btn {
+  font-size: 1rem;
+  padding: 0.9rem 2.2rem;
+  box-shadow: 0 4px 18px rgba(0, 151, 178, 0.45);
 }
 
-.channel-val {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--pbs-midnight-navy);
-}
-
-.channel-placeholder-note {
-  font-size: 0.72rem;
-  color: var(--pbs-amber);
+.cta-footer-note {
+  font-size: 0.78rem;
+  color: #94a3b8;
   font-weight: 500;
-}
-
-/* Form */
-.contact-form-card {
-  background: var(--pbs-ice-grey-light);
-  border: 1px solid var(--pbs-border-color);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-md);
-}
-
-.form-group {
-  margin-bottom: 1.4rem;
-}
-
-.form-label {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--pbs-corporate-navy);
-  margin-bottom: 0.45rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.form-input, .form-select, .form-textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-family: inherit;
-  font-size: 0.9rem;
-  color: var(--pbs-dark-charcoal);
-  background: var(--pbs-pure-white);
-  border: 1px solid var(--pbs-border-color);
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-}
-
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  outline: none;
-  border-color: var(--pbs-cerulean-teal);
-  box-shadow: 0 0 0 3px rgba(0, 151, 178, 0.15);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 110px;
 }
 
 /* ==============================================================================
@@ -1342,22 +1361,22 @@ button {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
   .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .desktop-nav, .header-cta {
+@media (max-width: 860px) {
+  .desktop-nav {
     display: none;
   }
   .mobile-menu-btn {
     display: block;
   }
+}
+
+@media (max-width: 768px) {
   .hero-title {
     font-size: 2.15rem;
   }
@@ -1374,6 +1393,22 @@ button {
   .principles-list {
     grid-template-columns: 1fr;
   }
+  .cta-card {
+    padding: 2.75rem 1.5rem;
+  }
+  .cta-title {
+    font-size: 1.85rem;
+  }
+  .cta-desc {
+    font-size: 0.95rem;
+  }
+  .cta-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cta-btn-group .btn {
+    width: 100%;
+  }
   .footer-top {
     grid-template-columns: 1fr;
   }
@@ -1381,5 +1416,31 @@ button {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    gap: 0.5rem;
+  }
+  .brand-logo-img {
+    width: 32px;
+    height: 32px;
+  }
+  .brand-name {
+    font-size: 0.82rem;
+  }
+  .brand-tagline {
+    font-size: 0.58rem;
+  }
+  .btn-pdf-header {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.74rem;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .cta-title {
+    font-size: 1.5rem;
   }
 }

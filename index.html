@@ -26,32 +26,29 @@
   <header class="site-header" id="header">
     <div class="container header-inner">
       <a href="#hero" class="brand-identity" aria-label="PAUL BUSINESS SOLUTIONS Home">
-        <img src="assets/logos/1.png" alt="PBS Emblem Logo" class="brand-logo-img">
+        <img src="assets/logos/1.webp" alt="PBS Emblem Logo" class="brand-logo-img" width="36" height="36">
         <div class="brand-text-block">
           <span class="brand-name">PAUL BUSINESS SOLUTIONS</span>
-          <span class="brand-sub">Industry-Wide Technology Solutions</span>
+          <span class="brand-tagline">Technology. Built for Business.</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation (Simplified) -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <a href="#overview" class="nav-link">Overview</a>
         <a href="#services" class="nav-link">Services</a>
-        <a href="#projects" class="nav-link">Showcase Projects</a>
-        <a href="#engineering" class="nav-link">Engineering</a>
-        <a href="#about" class="nav-link">About PBS</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
       </nav>
 
-      <!-- Header CTAs -->
+      <!-- Header Actions: Single clear PDF action without crowding -->
       <div class="header-actions">
-        <a href="assets/documents/PBS-Portfolio-2026.pdf" download="PBS-Portfolio-2026.pdf" class="btn btn-ghost-light btn-sm" id="headerPdfBtn" title="Download Verified PDF Portfolio">
+        <a href="assets/documents/PBS-Portfolio-2026.pdf" download="PBS-Portfolio-2026.pdf" class="btn-pdf-header" id="headerPdfBtn" title="Download Verified PDF Portfolio">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-          PDF Portfolio
+          <span>PDF Portfolio</span>
         </a>
-        <a href="#contact" class="btn btn-primary btn-sm header-cta">Discuss Your Project</a>
         <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -61,16 +58,16 @@
   <div class="mobile-drawer" id="mobileDrawer">
     <a href="#overview" class="mobile-nav-link">Overview</a>
     <a href="#services" class="mobile-nav-link">Services</a>
-    <a href="#projects" class="mobile-nav-link">Showcase Projects</a>
-    <a href="#engineering" class="mobile-nav-link">Engineering & Integrity</a>
-    <a href="#about" class="mobile-nav-link">About PBS</a>
-    <a href="#contact" class="mobile-nav-link">Contact & Inquiries</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#about" class="mobile-nav-link">About</a>
     <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.8rem;">
-      <a href="assets/documents/PBS-Portfolio-2026.pdf" download="PBS-Portfolio-2026.pdf" class="btn btn-secondary" style="width: 100%;">
+      <a href="assets/documents/PBS-Portfolio-2026.pdf" download="PBS-Portfolio-2026.pdf" class="btn btn-secondary" style="width: 100%; justify-content: center;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
         Download PDF Portfolio
       </a>
-      <a href="#contact" class="btn btn-primary" style="width: 100%;">Discuss Your Project</a>
+      <a href="https://www.paulbizsolutions.com/contact.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center;">
+        Discuss Your Project ↗
+      </a>
     </div>
   </div>
 
@@ -122,7 +119,7 @@
         <!-- Hero Visual Showcase Card -->
         <div class="hero-visual-card" onclick="openProjectModal('restaurant-os')" style="cursor: pointer;" title="Click to view Restaurant OS details">
           <div class="hero-visual-frame">
-            <img src="assets/screenshots/restaurant-os/01-restaurant-dashboard-desktop.png" alt="Restaurant OS Administrative Overview" loading="eager">
+            <img src="assets/screenshots/restaurant-os/01-restaurant-dashboard-desktop.webp" alt="Restaurant OS Administrative Overview" loading="eager" fetchpriority="high">
           </div>
           <div class="hero-visual-meta">
             <div>
@@ -422,96 +419,28 @@
       </div>
     </section>
 
-    <!-- CONTACT & CONSULTATION -->
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-info-block">
-          <div>
-            <span class="section-tag">Direct Engagement</span>
-            <h2 class="section-title">Discuss Your Next Technology Initiative</h2>
-            <p class="section-lead" style="margin-bottom: 1.5rem;">
-              Whether you need to streamline multi-outlet restaurant billing, build an enterprise web showcase, or automate conversational retail orders, PBS brings the business understanding and technical depth to execute.
-            </p>
-          </div>
-
-          <div class="contact-channel-card">
-            <div class="channel-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="channel-label">Operational Base & Headquarters</div>
-              <div class="channel-val">Kolkata, India</div>
-              <div style="font-size: 0.75rem; color: #64748b;">Serving regional and remote enterprise client engagements</div>
-            </div>
-          </div>
-
-          <div class="contact-channel-card">
-            <div class="channel-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div>
-              <div class="channel-label">Official Inquiries Channel</div>
-              <div class="channel-val">PAUL BUSINESS SOLUTIONS</div>
-              <div class="channel-placeholder-note">[Official Inquiries Channel Pending Final Operational Authorization]</div>
-            </div>
-          </div>
-
-          <div class="contact-channel-card">
-            <div class="channel-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-            </div>
-            <div>
-              <div class="channel-label">Print-Ready Document</div>
-              <div class="channel-val">Official PBS PDF Portfolio (2026)</div>
-              <a href="assets/documents/PBS-Portfolio-2026.pdf" download="PBS-Portfolio-2026.pdf" style="font-size: 0.78rem; font-weight: 600; color: var(--pbs-cerulean-teal); text-decoration: underline;">
-                Download High-Resolution Document (PDF)
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Consultation Form -->
-        <div class="contact-form-card">
-          <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--pbs-midnight-navy); margin-bottom: 0.4rem;">
-            Request a Project Consultation
-          </h3>
-          <p style="font-size: 0.85rem; color: var(--pbs-slate-text); margin-bottom: 1.8rem;">
-            Provide brief context regarding your operational goals, and our principal team will review requirements.
+    <!-- CALL TO ACTION (CTA) SECTION -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-badge">Next Steps</div>
+          <h2 class="cta-title">Have a Project in Mind?</h2>
+          <p class="cta-desc">
+            Let's understand your business needs and explore the right technology solution for your organisation.
           </p>
-
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="formName" class="form-label">Your Name</label>
-              <input type="text" id="formName" class="form-input" placeholder="e.g. Rahul Sen" required>
-            </div>
-
-            <div class="form-group">
-              <label for="formCompany" class="form-label">Business / Organization Name</label>
-              <input type="text" id="formCompany" class="form-input" placeholder="e.g. Sen Hospitality Group">
-            </div>
-
-            <div class="form-group">
-              <label for="formService" class="form-label">Primary Technology Requirement</label>
-              <select id="formService" class="form-select">
-                <option value="Custom Business Systems & POS">Custom Business Systems & POS Software</option>
-                <option value="Commercial Websites & Digital Platforms">Commercial Websites & Digital Platforms</option>
-                <option value="Automation & Conversational Commerce">Automation & Conversational Commerce</option>
-                <option value="Turnkey Physical IT Infrastructure">Turnkey Physical IT Infrastructure</option>
-                <option value="Comprehensive Enterprise Transformation">Comprehensive Enterprise Transformation</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="formMessage" class="form-label">Project Scope / Operational Challenge</label>
-              <textarea id="formMessage" class="form-textarea" placeholder="Briefly describe what your business is looking to build or streamline..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              Submit Consultation Request
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-            <div id="formAlert"></div>
-          </form>
+          <div class="cta-btn-group">
+            <a href="https://www.paulbizsolutions.com/contact.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg cta-main-btn">
+              <span>Discuss Your Project</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="assets/documents/PBS-Portfolio-2026.pdf" download="PBS-Portfolio-2026.pdf" class="btn btn-ghost-light btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              <span>Download PDF Portfolio</span>
+            </a>
+          </div>
+          <div class="cta-footer-note">
+            <span>Operational Base: Kolkata, India • Direct inquiries routed through official PBS channels</span>
+          </div>
         </div>
       </div>
     </section>
@@ -522,7 +451,7 @@
     <div class="container footer-top">
       <div>
         <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem;">
-          <img src="assets/logos/1.png" alt="PBS Logo" style="width: 38px; height: 38px; border-radius: 6px; background:#fff; padding:2px;">
+          <img src="assets/logos/1.webp" alt="PBS Logo" width="36" height="36" style="border-radius: 6px; background:#fff; padding:2px;">
           <span style="font-weight: 800; font-size: 1.1rem; color: #fff;">PAUL BUSINESS SOLUTIONS</span>
         </div>
         <p class="footer-brand-desc">
@@ -533,12 +462,11 @@
       <div>
         <h4 class="footer-col-title">Navigation</h4>
         <ul class="footer-links-list">
-          <li><a href="#hero">Home / Hero</a></li>
-          <li><a href="#overview">Brand Philosophy</a></li>
-          <li><a href="#services">Core Capabilities</a></li>
+          <li><a href="#hero">Overview</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#projects">Showcase Projects</a></li>
-          <li><a href="#engineering">Engineering Rigor</a></li>
-          <li><a href="#contact">Contact & Inquiries</a></li>
+          <li><a href="#about">About PBS</a></li>
+          <li><a href="https://www.paulbizsolutions.com/contact.html" target="_blank" rel="noopener noreferrer">Discuss Your Project ↗</a></li>
         </ul>
       </div>
 
